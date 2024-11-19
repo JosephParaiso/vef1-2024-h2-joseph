@@ -1,6 +1,6 @@
 {
   "title": "Vefforritunarvefurinn",
-  "description": "Efni um vefforritun, sér í lagi HTML, CSS og JavaScript. Veldu hvaða efni þú vilt skoða hér að neðan.",
+  "description": "Efni um vefforritun, sér í lagi HTML, CSS og JavaScript. Veldu hvaða efni þú vilt skoða hér að ofan.",
   "navigation": [
     {
       "title": "Forsíða",
@@ -9,10 +9,6 @@
     {
       "title": "HTML",
       "slug": "html"
-    },
-    {
-      "title": "Aðgengi",
-      "slug": "adgengi"
     },
     {
       "title": "CSS",
