@@ -1,0 +1,29 @@
+@media (max-width: 767px) {
+  header {
+    h1 {
+      padding: 1rem;
+      font-size: 30px;
+    }
+    ul {
+      padding: 0.5rem 1rem 0.4rem 1rem;
+    }
+    li {
+      border-bottom: 1px solid var(--color2);
+    }
+  }
+  footer {
+    border-top: 3px solid var(--color3);
+    font-size: 20px;
+
+    padding: 0.4rem 0 1rem 0.7rem;
+  }
+  .button-section-container {
+    gap: 20px;
+    margin-top: 30px;
+
+    section button {
+      padding: 10px 20px;
+      width: 120px;
+    }
+  }
+}
