@@ -6,6 +6,10 @@ import { renderContentLecturePage } from './lib/pages/lectures-page.js';
 import { el } from './lib/elements.js';
 
 async function render(root, querystring) {
+
+  // clearing the root or else the website duplicates
+  root.innerHTML = '';
+
   const mainIndexJson = await fetcher('/data/index.json');
 
   const params = new URLSearchParams(querystring);
@@ -38,4 +42,36 @@ async function render(root, querystring) {
 
 const root = document.querySelector('#app');
 
+//historyApi implementation
+function navigate(url) {
+  history.pushState(null, '', url);
+  render(root, window.location.search);
+}
+//Overriding link behavior
+function setupNavigation() {
+  //click listener
+  document.body.addEventListener('click', (event) => {
+    const clickedElement = event.target;
+
+    //check if clicked element is 'a' and save it
+    const isAnchorTag = clickedElement.tagName === 'A';
+    //check if local
+    const isLocalLink = clickedElement.href.startsWith(window.location.origin);
+
+    if (isAnchorTag && isLocalLink) {
+      //prevent page reload
+      event.preventDefault();
+
+      navigate(clickedElement.href);
+    }
+  });
+}
+
+// Handle back/forward button
+window.addEventListener('popstate', () => {
+  render(root, window.location.search);
+})
+
+//initial render
 render(root, window.location.search);
+setupNavigation();
