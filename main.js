@@ -4,6 +4,8 @@ import { renderIndexPage } from "./lib/pages/index-page.js";
 import { renderSubpage } from "./lib/pages/sub-page.js";
 import { renderContentLecturePage } from "./lib/pages/lectures-page.js";
 
+import './styles.scss';
+
 async function render(root, querystring) {
   // clearing the root or else the website duplicates
   root.innerHTML = "";
